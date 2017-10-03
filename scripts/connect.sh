@@ -5,7 +5,7 @@ sleep 5
 
 /usr/sbin/danted -f /etc/danted.conf -D
 
-socat TCP4-LISTEN:3389 TCP4:10.52.160.4:3389 &
-socat TCP4-LISTEN:3390 TCP4:10.52.160.68:3389 &
+socat -d TCP4-LISTEN:3389,fork TCP4:$JUMP1:3389 &
+socat -d TCP4-LISTEN:3390.fork TCP4:$JUMP2:3389 &
 
 /bin/bash
