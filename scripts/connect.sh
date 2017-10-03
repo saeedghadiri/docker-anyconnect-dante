@@ -5,6 +5,7 @@ sleep 5
 
 /usr/sbin/danted -f /etc/danted.conf -D
 
-nc -l -p 3389 -c "nc 10.52.160.4 3389" &
+socat TCP4-LISTEN:3389 TCP4:10.52.160.4:3389 &
+socat TCP4-LISTEN:3390 TCP4:10.52.160.68:3389 &
 
 /bin/bash

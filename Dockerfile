@@ -1,5 +1,5 @@
 FROM ubuntu:17.10
-RUN apt-get update && apt-get install -y openconnect iptables expect dante-server netcat
+RUN apt-get update && apt-get install -y openconnect iptables expect dante-server socat
 
 ADD scripts/connect.sh /root
 RUN chmod +x /root/connect.sh
