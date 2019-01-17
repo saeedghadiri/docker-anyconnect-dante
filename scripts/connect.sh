@@ -6,7 +6,11 @@ else
   echo $ANYCONNECT_PASSWORD|openconnect $ANYCONNECT_SERVER --user=$ANYCONNECT_USER --servercert=$CERT -b
 fi
 
-sleep 5
+while ! ip link show | grep -q "tun0"; do
+    echo "Initializing the tunnel"
+    sleep 2
+done
+echo "Tunnel is ready!"
 
 /usr/sbin/danted -f /etc/danted.conf -D
 
