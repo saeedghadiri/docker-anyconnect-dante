@@ -1,4 +1,4 @@
-FROM ubuntu:17.10
+FROM ubuntu
 RUN apt-get update && apt-get install -y openconnect iptables expect dante-server socat
 
 ADD scripts/connect.sh /root
