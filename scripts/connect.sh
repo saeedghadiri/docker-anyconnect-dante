@@ -1,9 +1,9 @@
 #!/bin/bash
 if [ -z "$CERT" ]
 then
-  echo $ANYCONNECT_PASSWORD|openconnect $ANYCONNECT_SERVER --user=$ANYCONNECT_USER -b
+  echo $ANYCONNECT_PASSWORD|openconnect $ANYCONNECT_SERVER --user=$ANYCONNECT_USER --reconnect-timeout=6000 -b
 else
-  echo $ANYCONNECT_PASSWORD|openconnect $ANYCONNECT_SERVER --user=$ANYCONNECT_USER --servercert=$CERT -b
+  echo $ANYCONNECT_PASSWORD|openconnect $ANYCONNECT_SERVER --user=$ANYCONNECT_USER --servercert=$CERT --reconnect-timeout=6000 -b
 fi
 
 while ! ip link show | grep -q "tun0"; do

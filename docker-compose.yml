@@ -1,0 +1,21 @@
+version: '3.7'
+services:
+    vpn:
+        build:
+            context: .
+            dockerfile: Dockerfile
+        container_name: vpn
+        environment:
+            - ANYCONNECT_SERVER=
+            - ANYCONNECT_USER=
+            - ANYCONNECT_PASSWORD=
+            - CERT=
+        stdin_open: true
+        tty: true
+        cap_add:
+          - ALL
+        privileged: true
+
+        ports:
+            - "1081:1081"
+            - "3389:3389"
