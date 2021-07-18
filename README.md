@@ -1,16 +1,19 @@
 # AnyConnect + Dante in docker container
 
-Provides SOCKS proxy on port 1081 that tunnels connections
-via AnyConnect VPN. Start with `--priviledged` to allow 
-docker container to setup tunneling network instance inside.
+This docker Provides SOCKS proxy on port 1081 that tunnels connections via AnyConnect VPN client. It works with Iranian VPNs like speedvpn.
 
+## How to use
+1. Install docker
+2. Set server, username, password and cert on docker-compose.yml file
+3. cd to the directory and run docker compose. for example in windows:
+###
 
-## Example run
+    docker-compose -f docker-compose.yml up -d
 
-    docker run -p 1081:1081 -p 3389:3389 \
-        -e ANYCONNECT_SERVER=<server_ip> \
-        -e CERT='sha256:<server_cert_fingerprint>' \
-        -e ANYCONNECT_USER=<username> \
-        -e ANYCONNECT_PASSWORD=<password> \
-        --privileged -ti `docker build -q`
+## Example of setting fields on  docker compose file
+
+         - ANYCONNECT_SERVER=s30.serspeed.info:555
+         - ANYCONNECT_USER=myusername
+         - ANYCONNECT_PASSWORD=mypassword
+         - CERT=pin-sha256:bP61cIU9tXSiZ0BEbt1OYEvYoQNMOXRMGug3wbbssNI=
 
