@@ -1,6 +1,6 @@
 # AnyConnect + Dante in docker container
 
-This docker Provides SOCKS proxy on port 1081 that tunnels connections via AnyConnect VPN client. It works with Iranian VPNs like speedvpn.
+This docker Provides SOCKS proxy on port 1081 that tunnels connections via AnyConnect VPN client so you can share your vpn across network or dockers. It works with Iranian VPNs like speedvpn.
 
 ## How to use
 1. Install docker
