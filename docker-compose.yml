@@ -5,11 +5,14 @@ services:
             context: .
             dockerfile: Dockerfile
         container_name: vpn
+        restart: always
         environment:
             - ANYCONNECT_SERVER=
             - ANYCONNECT_USER=
             - ANYCONNECT_PASSWORD=
             - CERT=
+            - ANYCONNECT_AUTH_TYPE=Basics
+            - CHECK_WEBSITE=twitter.com
         stdin_open: true
         tty: true
         cap_add:
