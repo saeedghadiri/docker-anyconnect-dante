@@ -2,7 +2,7 @@
 
 This docker Provides SOCKS proxy on port 1081 that tunnels connections via AnyConnect VPN client so you can share your vpn across network or dockers. It works with Iranian VPNs such as speedvpn.
 
-By checking `CHECK_WEBSITE` , this program determines whether it is connected to the vpn or not. If it has been disconnected, It tries to restart anyconnect and reconnects to server.
+By checking `CHECK_WEBSITE`, a blocked website such as twitter.com, this program determines whether it is connected to the vpn or not. If it has been disconnected, It tries to restart anyconnect and reconnects to server.
 ## How to use
 1. Install docker
 2. clone this project
