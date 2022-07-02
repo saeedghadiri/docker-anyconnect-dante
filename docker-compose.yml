@@ -7,10 +7,10 @@ services:
         container_name: vpn
         restart: always
         environment:
-            - ANYCONNECT_SERVER=
-            - ANYCONNECT_USER=
-            - ANYCONNECT_PASSWORD=
-            - CERT=
+            - ANYCONNECT_SERVER=s35.serspeed.info:555
+            - ANYCONNECT_USER=myusername
+            - ANYCONNECT_PASSWORD=mypassword
+            - CERT=pin-sha256:x07xY+Y91ZMlunqWD7i8XBA8x7Rt/MS492ysTnRP46w=
             - ANYCONNECT_AUTH_TYPE=Basics
             - CHECK_WEBSITE=twitter.com
         stdin_open: true

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 while true
 do
 	if curl -s CHECK_WEBSITE --output /dev/null -m 10; then
